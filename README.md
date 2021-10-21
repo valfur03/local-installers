@@ -18,6 +18,6 @@ The script installs the program in `$HOME/.local/`.
 
 ## Sources
 
-|	Program	|	Version	|	Website							|	Download link														|
-|-----------|-----------|-----------------------------------|-----------------------------------------------------------------------|
-|	jq		|	1.5		|	https://stedolan.github.io/jq/	|	https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64	|
+|	Program	|	Version			|	Website							|	Download link														|
+|-----------|-------------------|-----------------------------------|-----------------------------------------------------------------------|
+|	jq		|	1.5 (x64)		|	https://stedolan.github.io/jq/	|	https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64	|
