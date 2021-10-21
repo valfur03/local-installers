@@ -27,6 +27,7 @@ fi
 
 printf "${BLUE}Downloading jq...${NC}\n"
 curl -fsSL -o jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+chmod +x jq
 
 printf "${BLUE}Installing jq in \$HOME/.local/usr/bin...${NC}\n"
 mkdir -p $HOME/.local/usr/bin
