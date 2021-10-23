@@ -20,7 +20,7 @@ then
 fi
 
 printf "${BLUE}Downloading %s...${NC}\n" "$PACKAGE_NAME"
-if ! CURL_ERROR=$(curl -fsSL -o $PACKAGE_NAME ${PACKAGE_SOURCE} 2>&1)
+if ! CURL_ERROR=$(curl -fsSL -o $PACKAGE_NAME $PACKAGE_SOURCE 2>&1)
 then
 	printf "${RED}%s could not be downloaded...${NC}\n" $PACKAGE_NAME
 	print_help_issue
