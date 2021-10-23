@@ -33,6 +33,7 @@ then
 	printf "${RED}Could not give execution permissions to %s...${NC}\n" $PACKAGE_NAME
 	print_help_issue
 	print_debug_info "$CHMOD_ERROR"
+	rm $PACKAGE_NAME
 	exit 1
 fi
 
@@ -42,6 +43,7 @@ then
 	printf "${RED}Could not create folder $HOME/.local/usr/bin...${NC}\n"
 	print_help_issue
 	print_debug_info "$MKDIR_ERROR"
+	rm $PACKAGE_NAME
 	exit 1
 fi
 if ! MV_ERROR=$(mv jq $HOME/.local/usr/bin 2>&1)
@@ -49,6 +51,7 @@ then
 	printf "${RED}Could not mv %s $HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
 	print_help_issue
 	print_debug_info "$MV_ERROR"
+	rm $PACKAGE_NAME
 	exit 1
 fi
 
