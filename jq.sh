@@ -21,4 +21,5 @@ printf "${BLUE}Installing %s in \$HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
 mkdir -p $HOME/.local/usr/bin
 mv jq $HOME/.local/usr/bin
 
+printf "${GREEN}jq is installed!${NC}\n"
 print_help_path
