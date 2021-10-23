@@ -44,7 +44,14 @@ then
 	print_debug_info "$MKDIR_ERROR"
 	exit 1
 fi
-mv jq $HOME/.local/usr/bin
+if ! MV_ERROR=$(mv jq $HOME/.local/usr/bin 2>&1)
+then
+	printf "${RED}Could not mv %s $HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
+	print_help_issue
+	print_debug_info "$MV_ERROR"
+	exit 1
+fi
+
 
 printf "${GREEN}jq is installed!${NC}\n"
 print_help_path
