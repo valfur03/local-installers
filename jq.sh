@@ -18,6 +18,3 @@ mkdir -p $HOME/.local/usr/bin
 mv jq $HOME/.local/usr/bin
 
 print_help_path
-
-printf "${YELLOW}You may need to restart your shell\n"
-printf "for the PATH variable to change${NC}\n"
