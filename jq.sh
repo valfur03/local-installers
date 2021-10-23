@@ -12,6 +12,7 @@ PACKAGE_SOURCE="https://github.com/stedolan/jq/releases/download/jq-$PACKAGE_VER
 
 CURL_ERROR=""
 CHMOD_ERROR=""
+MKDIR_ERROR=""
 
 if ! commands_exist curl
 then
@@ -36,7 +37,13 @@ then
 fi
 
 printf "${BLUE}Installing %s in \$HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
-mkdir -p $HOME/.local/usr/bin
+if ! MKDIR_ERROR=$(mkdir -p $HOME/.local/usr/bin 2>&1)
+then
+	printf "${RED}Could not create folder $HOME/.local/usr/bin...${NC}\n"
+	print_help_issue
+	print_debug_info "$MKDIR_ERROR"
+	exit 1
+fi
 mv jq $HOME/.local/usr/bin
 
 printf "${GREEN}jq is installed!${NC}\n"
