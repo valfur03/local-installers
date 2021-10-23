@@ -1,24 +1,7 @@
 #!/bin/sh
 
-NC="\033[0m"
-RED="\033[31m"
-GREEN="\033[32m"
-YELLOW="\033[33m"
-BLUE="\033[34m"
-MAGENTA="\033[35m"
-
-commands_exist()
-{
-	for cmd in "$@"
-	do
-		if ! command -v $cmd > /dev/null 2>&1
-		then
-			printf "${RED}command '%s' is not installed...${NC}\n" "$cmd"
-			return 1
-		fi
-	done
-	return 0
-}
+. utils/colors.sh
+. utils/commands_exist.sh
 
 if ! commands_exist curl
 then
