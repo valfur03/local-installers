@@ -4,16 +4,20 @@
 . utils/commands_exist.sh
 . utils/print_help_path.sh
 
+PACKAGE_NAME="jq"
+PACKAGE_VERSION="1.5"
+PACKAGE_SOURCE="https://github.com/stedolan/jq/releases/download/jq-$PACKAGE_VERSION/jq-linux64"
+
 if ! commands_exist curl
 then
 	exit 1
 fi
 
-printf "${BLUE}Downloading jq...${NC}\n"
-curl -fsSL -o jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
-chmod +x jq
+printf "${BLUE}Downloading %s...${NC}\n" "$PACKAGE_NAME"
+curl -fsSL -o $PACKAGE_NAME $PACKAGE_SOURCE
+chmod +x $PACKAGE_NAME
 
-printf "${BLUE}Installing jq in \$HOME/.local/usr/bin...${NC}\n"
+printf "${BLUE}Installing %s in \$HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
 mkdir -p $HOME/.local/usr/bin
 mv jq $HOME/.local/usr/bin
 
