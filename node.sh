@@ -70,5 +70,5 @@ fi
 
 rm -r $PACKAGE_DIRECTORY $PACKAGE_ARCHIVE
 
-printf "${GREEN}node is installed!${NC}\n"
+printf "${GREEN}%s is installed!${NC}\n" $PACKAGE_NAME
 print_help_path

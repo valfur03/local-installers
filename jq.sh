@@ -56,5 +56,5 @@ then
 fi
 
 
-printf "${GREEN}jq is installed!${NC}\n"
+printf "${GREEN}%s is installed!${NC}\n" $PACKAGE_NAME
 print_help_path
