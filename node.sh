@@ -28,7 +28,7 @@ then
 	exit 1
 fi
 
-printf "${BLUE}Extracting %s arhive in %s...${NC}\n" $PACKAGE_NAME $PACKAGE_DIRECTORY
+printf "${BLUE}Extracting %s archive in %s...${NC}\n" $PACKAGE_NAME $PACKAGE_DIRECTORY
 if ! ERROR=$(tar xf $PACKAGE_ARCHIVE 2>&1)
 then
 	printf "${RED}Could not extract %s...${NC}\n" $PACKAGE_ARCHIVE
