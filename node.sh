@@ -7,7 +7,7 @@
 . utils/print_help_path.sh
 
 PACKAGE_NAME="node"
-PACKAGE_VERSION="14.18.1"
+PACKAGE_VERSION="16.13.1"
 PACKAGE_DIRECTORY="node-v$PACKAGE_VERSION-linux-x64"
 PACKAGE_ARCHIVE="$PACKAGE_DIRECTORY.tar.xz"
 PACKAGE_SOURCE="https://nodejs.org/dist/v$PACKAGE_VERSION/node-v$PACKAGE_VERSION-linux-x64.tar.xz"
