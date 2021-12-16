@@ -5,6 +5,7 @@
 . utils/print_help_issue.sh
 . utils/print_debug_info.sh
 . utils/print_help_path.sh
+. utils/machine_hardware.sh
 
 PACKAGE_NAME="jq"
 PACKAGE_VERSION="1.5"

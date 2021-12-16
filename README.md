@@ -18,7 +18,7 @@ The script installs the program in `$HOME/.local/`.
 
 ## Sources
 
-|	Program	|	Version			|	Website							|	Download link														|
-|-----------|-------------------|-----------------------------------|-----------------------------------------------------------------------|
-|	jq		|	1.5 (x64)		|	https://stedolan.github.io/jq/	|	https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64	|
-|	node	|	16.13.1(x64)	|	https://nodejs.org				|	https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz		|
+|	Program	|	Version	|	Architecture			|	Website							|	Download link														|
+|-----------|-----------|---------------------------|-----------------------------------|-----------------------------------------------------------------------|
+|	jq		|	1.5		|	64 bits					|	https://stedolan.github.io/jq/	|	https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64	|
+|	node	|	16.13.1	|	x86_64, armv7, armv8	|	https://nodejs.org				|	https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz		|
