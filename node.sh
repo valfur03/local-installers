@@ -25,6 +25,8 @@ PACKAGE_ARCHIVE="$PACKAGE_DIRECTORY.tar.xz"
 PACKAGE_DESTINATION="$HOME/$PACKAGE_ARCHIVE"
 PACKAGE_SOURCE="https://nodejs.org/dist/v$PACKAGE_VERSION/$PACKAGE_ARCHIVE"
 
+. utils/args.sh
+
 ERROR=""
 
 if ! commands_exist wget
