@@ -23,17 +23,17 @@ PACKAGE_VERSION="16.13.1"
 PACKAGE_DIRECTORY="node-v$PACKAGE_VERSION-linux-$MACHINE_HARDWARE"
 PACKAGE_ARCHIVE="$PACKAGE_DIRECTORY.tar.xz"
 PACKAGE_DESTINATION="$HOME/$PACKAGE_ARCHIVE"
-PACKAGE_SOURCE="https://nodejs.org/dist/v$PACKAGE_VERSION/node-v$PACKAGE_VERSION-linux-$MACHINE_HARDWARE.tar.xz"
+PACKAGE_SOURCE="https://nodejs.org/dist/v$PACKAGE_VERSION/$PACKAGE_ARCHIVE"
 
 ERROR=""
 
-if ! commands_exist curl
+if ! commands_exist wget
 then
 	exit 1
 fi
 
 printf "${BLUE}Downloading %s...${NC}\n" "$PACKAGE_NAME"
-if ! ERROR=$(curl -fsSL -o $PACKAGE_DESTINATION $PACKAGE_SOURCE 2>&1)
+if ! ERROR=$(wget -O $PACKAGE_DESTINATION $PACKAGE_SOURCE 2>&1)
 then
 	printf "${RED}%s could not be downloaded...${NC}\n" $PACKAGE_NAME
 	print_help_issue

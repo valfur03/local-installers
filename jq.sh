@@ -14,13 +14,13 @@ PACKAGE_SOURCE="https://github.com/stedolan/jq/releases/download/jq-$PACKAGE_VER
 
 ERROR=""
 
-if ! commands_exist curl
+if ! commands_exist wget
 then
 	exit 1
 fi
 
 printf "${BLUE}Downloading %s...${NC}\n" "$PACKAGE_NAME"
-if ! ERROR=$(curl -fsSL -o $PACKAGE_DESTINATION $PACKAGE_SOURCE 2>&1)
+if ! ERROR=$(wget -O $PACKAGE_DESTINATION $PACKAGE_SOURCE 2>&1)
 then
 	printf "${RED}%s could not be downloaded...${NC}\n" $PACKAGE_NAME
 	print_help_issue
