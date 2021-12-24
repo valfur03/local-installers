@@ -21,10 +21,10 @@ then
 	exit 1
 fi
 
-[ $QUIET == "0" ] && printf "${BLUE}Downloading %s...${NC}\n" "$PACKAGE_NAME"
+[ "$QUIET" = "0" ] && printf "${BLUE}Downloading %s...${NC}\n" "$PACKAGE_NAME"
 if ! ERROR=$(wget -O $PACKAGE_DESTINATION $PACKAGE_SOURCE 2>&1)
 then
-	[ $QUIET == "0" ] && printf "${RED}%s could not be downloaded...${NC}\n" $PACKAGE_NAME
+	[ "$QUIET" = "0" ] && printf "${RED}%s could not be downloaded...${NC}\n" $PACKAGE_NAME
 	print_help_issue
 	print_debug_info "$ERROR"
 	exit 1
@@ -32,17 +32,17 @@ fi
 
 if ! ERROR=$(chmod +x $PACKAGE_DESTINATION 2>&1)
 then
-	[ $QUIET == "0" ] && printf "${RED}Could not give execution permissions to %s...${NC}\n" $PACKAGE_DESTINATION
+	[ "$QUIET" = "0" ] && printf "${RED}Could not give execution permissions to %s...${NC}\n" $PACKAGE_DESTINATION
 	print_help_issue
 	print_debug_info "$ERROR"
 	rm -f $PACKAGE_DESTINATION
 	exit 1
 fi
 
-[ $QUIET == "0" ] && printf "${BLUE}Installing %s in \$HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
+[ "$QUIET" = "0" ] && printf "${BLUE}Installing %s in \$HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
 if ! ERROR=$(mkdir -p $HOME/.local/usr/bin 2>&1)
 then
-	[ $QUIET == "0" ] && printf "${RED}Could not create folder $HOME/.local/usr/bin...${NC}\n"
+	[ "$QUIET" = "0" ] && printf "${RED}Could not create folder $HOME/.local/usr/bin...${NC}\n"
 	print_help_issue
 	print_debug_info "$ERROR"
 	rm -f $PACKAGE_NAME
@@ -50,7 +50,7 @@ then
 fi
 if ! ERROR=$(mv $PACKAGE_DESTINATION $HOME/.local/usr/bin 2>&1)
 then
-	[ $QUIET == "0" ] && printf "${RED}Could not mv %s $HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
+	[ "$QUIET" = "0" ] && printf "${RED}Could not mv %s $HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
 	print_help_issue
 	print_debug_info "$ERROR"
 	rm -f $PACKAGE_NAME
@@ -58,5 +58,5 @@ then
 fi
 
 
-[ $QUIET == "0" ] && printf "${GREEN}%s is installed!${NC}\n" $PACKAGE_NAME
+[ "$QUIET" = "0" ] && printf "${GREEN}%s is installed!${NC}\n" $PACKAGE_NAME
 print_help_path

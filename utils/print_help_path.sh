@@ -4,7 +4,7 @@ print_help_path()
 {
 	if ! echo $PATH | grep "$HOME/.local/usr/bin" > /dev/null 2>&1 \
 		&& ! echo $PATH | grep '$HOME/.local/usr/bin' > /dev/null 2>&1 \
-		&& [ $QUIET == "0" ]
+		&& [ "$QUIET" = "0" ]
 	then
 		printf "Now add the following lines to your .zshrc\n"
 		printf "(or .bashrc or whatever file your shell uses).\n"

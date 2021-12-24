@@ -34,19 +34,19 @@ then
 	exit 1
 fi
 
-printf "${BLUE}Downloading %s...${NC}\n" "$PACKAGE_NAME"
+[ "$QUIET" = "0" ] && printf "${BLUE}Downloading %s...${NC}\n" "$PACKAGE_NAME"
 if ! ERROR=$(wget -O $PACKAGE_DESTINATION $PACKAGE_SOURCE 2>&1)
 then
-	printf "${RED}%s could not be downloaded...${NC}\n" $PACKAGE_NAME
+	[ "$QUIET" = "0" ] && printf "${RED}%s could not be downloaded...${NC}\n" $PACKAGE_NAME
 	print_help_issue
 	print_debug_info "$ERROR"
 	exit 1
 fi
 
-printf "${BLUE}Extracting %s archive in %s...${NC}\n" $PACKAGE_NAME $PACKAGE_DIRECTORY
+[ "$QUIET" = "0" ] && printf "${BLUE}Extracting %s archive in %s...${NC}\n" $PACKAGE_NAME $PACKAGE_DIRECTORY
 if ! ERROR=$(tar x -C $HOME -f $PACKAGE_DESTINATION 2>&1)
 then
-	printf "${RED}Could not extract %s...${NC}\n" $PACKAGE_ARCHIVE
+	[ "$QUIET" = "0" ] && printf "${RED}Could not extract %s...${NC}\n" $PACKAGE_ARCHIVE
 	print_help_issue
 	print_debug_info "$ERROR"
 	rm -rf $HOME/$PACKAGE_DIRECTORY
@@ -54,13 +54,13 @@ then
 	exit 1
 fi
 
-printf "${BLUE}Installing %s in \$HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
+[ "$QUIET" = "0" ] && printf "${BLUE}Installing %s in \$HOME/.local/usr/bin...${NC}\n" $PACKAGE_NAME
 if ! ERROR=$(mkdir -p $HOME/.local/usr/bin 2>&1) \
 	|| ! ERROR=$(mkdir -p $HOME/.local/usr/include 2>&1) \
 	|| ! ERROR=$(mkdir -p $HOME/.local/usr/lib 2>&1) \
 	|| ! ERROR=$(mkdir -p $HOME/.local/usr/share 2>&1)
 then
-	printf "${RED}Could not create in folder $HOME/.local/usr...${NC}\n"
+	[ "$QUIET" = "0" ] && printf "${RED}Could not create in folder $HOME/.local/usr...${NC}\n"
 	print_help_issue
 	print_debug_info "$ERROR"
 	rm -rf $HOME/$PACKAGE_DIRECTORY
@@ -72,7 +72,7 @@ if ! ERROR=$(cp -rf $HOME/$PACKAGE_DIRECTORY/bin $HOME/.local/usr 2>&1) \
 	|| ! ERROR=$(cp -rf $HOME/$PACKAGE_DIRECTORY/lib $HOME/.local/usr 2>&1) \
 	|| ! ERROR=$(cp -rf $HOME/$PACKAGE_DIRECTORY/share $HOME/.local/usr 2>&1)
 then
-	printf "${RED}Could not cp %s $HOME/.local...${NC}\n" $PACKAGE_NAME
+	[ "$QUIET" = "0" ] && printf "${RED}Could not cp %s $HOME/.local...${NC}\n" $PACKAGE_NAME
 	print_help_issue
 	print_debug_info "$ERROR"
 	rm -rf $HOME/$PACKAGE_DIRECTORY
@@ -82,5 +82,5 @@ fi
 
 rm -r $HOME/$PACKAGE_DIRECTORY $PACKAGE_DESTINATION
 
-printf "${GREEN}%s is installed!${NC}\n" $PACKAGE_NAME
+[ "$QUIET" = "0" ] && printf "${GREEN}%s is installed!${NC}\n" $PACKAGE_NAME
 print_help_path
