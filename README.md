@@ -21,5 +21,5 @@ The script installs the program in `$HOME/.local/`.
 |	Program		|	Version	|	Architecture			|	Website							|	Download link																					|
 |---------------|-----------|---------------------------|-----------------------------------|---------------------------------------------------------------------------------------------------|
 |	jq			|	1.5		|	64 bits					|	https://stedolan.github.io/jq/	|	https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64								|
-|	node		|	16.13.1	|	x86_64, armv7, armv8	|	https://nodejs.org				|	https://nodejs.org/dist/v16.13.1/node-v16.13.1-linux-x64.tar.xz									|
+|	node		|	16.14.2	|	x86_64, armv7, armv8	|	https://nodejs.org				|	https://nodejs.org/dist/v16.14.2/node-v16.14.2-linux-x64.tar.xz									|
 |	supabase	|	0.16.1	|	x86_64, armv8			|	https://github.com/supabase/cli	|	https://github.com/supabase/cli/releases/download/v0.16.1/supabase_0.16.1_linux_amd64.tar.gz	|
