@@ -43,17 +43,17 @@ then
 fi
 
 [ "$QUIET" = "0" ] && printf "${BLUE}Installing %s in %s...${NC}\n" $PACKAGE_NAME $PACKAGE_DESTINATION
-if ! ERROR=$(mkdir -p $PACKAGE_DESTINATION 2>&1)
+if ! ERROR=$(mkdir -p $PACKAGE_DESTINATION/bin 2>&1)
 then
-	[ "$QUIET" = "0" ] && printf "${RED}Could not create folder $PACKAGE_DESTINATION...${NC}\n"
+	[ "$QUIET" = "0" ] && printf "${RED}Could not create in folder $PACKAGE_DESTINATION...${NC}\n"
 	print_help_issue
 	print_debug_info "$ERROR"
 	rm -f $ARCHIVE_DESTINATION
 	exit 1
 fi
-if ! ERROR=$(mv $ARCHIVE_DESTINATION $PACKAGE_DESTINATION/bin 2>&1)
+if ! ERROR=$(mv $ARCHIVE_DESTINATION $PACKAGE_DESTINATION/bin/$PACKAGE_NAME 2>&1)
 then
-	[ "$QUIET" = "0" ] && printf "${RED}Could not mv %s in %s...${NC}\n" $PACKAGE_NAME $PACKAGE_DESTINATION
+	[ "$QUIET" = "0" ] && printf "${RED}Could not mv %s in %s...${NC}\n" $PACKAGE_NAME $PACKAGE_DESTINATION/bin/$PACKAGE_NAME
 	print_help_issue
 	print_debug_info "$ERROR"
 	rm -f $PACKAGE_NAME
