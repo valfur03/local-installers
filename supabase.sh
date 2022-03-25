@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd $(dirname "$0")
+
 . utils/colors.sh
 . utils/commands_exist.sh
 . utils/print_help_issue.sh
