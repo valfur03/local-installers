@@ -22,5 +22,5 @@ The script installs the program in `$HOME/.local/`.
 |---------------|-----------|---------------------------|---------------------------------------|---------------------------------------------------------------------------------------------------|
 |	jq			|	1.5		|	64 bits					|	https://stedolan.github.io/jq/		|	https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64								|
 |	node		|	18.8.0	|	x86_64, armv7, armv8	|	https://nodejs.org					|	https://nodejs.org/dist/v18.8.0/node-v18.8.0-linux-x64.tar.xz									|
-|	nvim		|	0.7.0	|	x86_64					|	https://github.com/neovim/neovim	|	https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.tar.gz					|
+|	nvim		|	0.8.0	|	x86_64					|	https://github.com/neovim/neovim	|	https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.tar.gz					|
 |	supabase	|	0.16.1	|	x86_64, armv8			|	https://github.com/supabase/cli		|	https://github.com/supabase/cli/releases/download/v0.16.1/supabase_0.16.1_linux_amd64.tar.gz	|
